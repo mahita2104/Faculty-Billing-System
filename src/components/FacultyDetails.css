@@ -1,0 +1,60 @@
+/* FacultyDetails.css */
+
+.faculty-details {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+}
+
+h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+strong {
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+/* Style for Mobile No. and Alternate No. side by side */
+.contact-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Style for Bank Name and Branch Name side by side */
+.bank-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
