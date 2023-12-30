@@ -1,108 +1,4 @@
-/* Reset default padding for container-fluid */
-/*.container-fluid {
-    padding: 0;
-  }*/
-  
-  /* Reset default block display for certain HTML5 elements */
-  /*article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-    display: block;
-  }*/
-  
-  /* Define styles for specific header element */
-  /*header {
-    display: block;
-  }*/
-  
-  /* Clearfix styles for various elements */
-  /*.btn-group-vertical > .btn-group:after,
-  .btn-group-vertical > .btn-group:before,
-  .btn-toolbar:after,
-  .btn-toolbar:before,
-  .clearfix:after,
-  .clearfix:before,
-  .container-fluid:after,
-  .container-fluid:before,
-  .container:after,
-  .container:before,
-  .dl-horizontal dd:after,
-  .dl-horizontal dd:before,
-  .form-horizontal .form-group:after,
-  .form-horizontal .form-group:before,
-  .modal-footer:after,
-  .modal-footer:before,
-  .modal-header:after,
-  .modal-header:before,
-  .nav:after,
-  .nav:before,
-  .navbar-collapse:after,
-  .navbar-collapse:before,
-  .navbar-header:after,
-  .navbar-header:before,
-  .navbar:after,
-  .navbar:before,
-  .pager:after,
-  .pager:before,
-  .panel-body:after,
-  .panel-body:before,
-  .row:after,
-  .row:before {
-    display: table;
-    content: " ";
-  }*/
-  
-  /* Clearfix styles with clear:both for specific elements */
-  /*.btn-group-vertical > .btn-group:after,
-  .btn-toolbar:after,
-  .clearfix:after,
-  .container-fluid:after,
-  .container:after,
-  .dl-horizontal dd:after,
-  .form-horizontal .form-group:after,
-  .modal-footer:after,
-  .modal-header:after,
-  .nav:after,
-  .navbar-collapse:after,
-  .navbar-header:after,
-  .navbar:after,
-  .pager:after,
-  .panel-body:after,
-  .row:after {
-    clear: both;
-  }*/
-  
- 
- 
- 
- 
- 
-  /* Center align the content */
-/*.container-fluid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  /* Style for the university name */
-  /*#mainHeading {
-    font-weight: bold;
-    font-size: larger;
-    color: darkblue;
-  }
-  
-  /* Style for the logo */
-  /*.logo {
-    display: inline-block;
-    margin-right: 20px; /* Adjust the margin as needed */
-  
-  
-  /* Style for the header itself */
-  /*header {
-    background-color: white; /* White background */
-   /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
-    /*padding: 20px; /* Add padding to enhance the shadow effect */
-  
+
   
 
 /* Style for the university name */
@@ -125,7 +21,7 @@
   
   /* Style for the text container */
   .text-container {
-    max-width: 800px; /* Set your desired maximum width for the text container */
+    max-width: auto; /* Set your desired maximum width for the text container */
     margin: 70px; /* Center the text container horizontally */
     text-align: center;
   }
@@ -147,11 +43,10 @@
     justify-content: flex-start; /* Aligns items to the start of the flex container */
     align-items: center;
     background-color: white; /* White background */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
     padding: 40px; /* Add padding to enhance the shadow effect */
     height: 30px;
+    max-width: auto;
   }
-  
   
   
   
