@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
-import CustomButton from "../components/button"; // Renamed the imported Button component
 
-interface ButtonProps {
-  onClick: () => void;
-  type?: "submit" | "reset" | "button";
+interface CustomButtonProps {
+  onClick: (e: React.FormEvent) => void;
+  children: React.ReactNode;
+  type?: "submit" | "reset" | "button"; // Define type attribute as optional
 }
 
-const Button: React.FC<ButtonProps> = ({
+const CustomButton: React.FC<CustomButtonProps> = ({
   onClick,
-  type = "button",
   children,
+  type = "button", // Set default value for type attribute
 }) => {
   return (
-    <button type={type} onClick={onClick}>
+    <button className="custom-button" type={type} onClick={onClick}>
       {children}
     </button>
   );
