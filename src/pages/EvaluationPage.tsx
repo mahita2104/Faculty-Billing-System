@@ -22,12 +22,17 @@ const EvaluationPage: React.FC = () => {
     }
   );
 
+  const [submittedEntries, setSubmittedEntries] = useState<EvaluationDetails[]>(
+    []
+  );
+
   const courseOptions = [
     { value: "btech", label: "B.Tech" },
     { value: "mtech", label: "M.Tech" },
     { value: "mca", label: "MCA" },
     { value: "phd", label: "Ph.D" },
   ];
+
   const yearoptions = [
     { value: "1", label: "1" },
     { value: "2", label: "2" },
@@ -41,8 +46,25 @@ const EvaluationPage: React.FC = () => {
     return checkingAmount;
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Save the current entry to submittedEntries
+    setSubmittedEntries([...submittedEntries, evaluationDetails]);
+
+    // Reset the form
+    setEvaluationDetails({
+      subject: "",
+      subjectCode: "",
+      numberOfStudents: 0,
+      checkingRate: 0,
+      course: "btech",
+      year: "1",
+    });
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="input-container">
         <label>Course:</label>
         <select
@@ -131,11 +153,50 @@ const EvaluationPage: React.FC = () => {
           }
         />
       </div>
-      <div className="result-container">
-        <h3>Total Amount: ₹{calculateTotalAmount()}</h3>
+      <div className="button-container">
+        <button className="submit-button" type="submit">
+          Submit
+        </button>
+        <button className="generate-bill-button" type="submit">
+          Submit and Generate Bill
+        </button>
       </div>
+
+      {/* Display submitted entries in a table */}
+      {submittedEntries.length > 0 && (
+        <div className="submitted-entries-container">
+          <h3>Submitted Entries:</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Course</th>
+                <th>Year</th>
+                <th>Subject</th>
+                <th>Subject Code</th>
+                <th>Number of Students</th>
+                <th>Checking Rate</th>
+                <th>Total Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {submittedEntries.map((entry, index) => (
+                <tr key={index}>
+                  <td>{entry.course}</td>
+                  <td>{entry.year}</td>
+                  <td>{entry.subject}</td>
+                  <td>{entry.subjectCode}</td>
+                  <td>{entry.numberOfStudents}</td>
+                  <td>{entry.checkingRate}</td>
+                  <td>{entry.numberOfStudents * entry.checkingRate}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </form>
   );
 };
 
 export default EvaluationPage;
+
