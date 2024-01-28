@@ -1,4 +1,3 @@
-// src/pages/EvaluationPage.tsx
 import React, { useState } from "react";
 import "./EvaluationPage.css";
 
@@ -7,7 +6,8 @@ interface EvaluationDetails {
   subjectCode: string;
   numberOfStudents: number;
   checkingRate: number;
-  practicalRate: number;
+  course: string;
+  year: string;
 }
 
 const EvaluationPage: React.FC = () => {
@@ -17,20 +17,68 @@ const EvaluationPage: React.FC = () => {
       subjectCode: "",
       numberOfStudents: 0,
       checkingRate: 0,
-      practicalRate: 0,
+      course: "btech", // Default course
+      year: "1",
     }
   );
+
+  const courseOptions = [
+    { value: "btech", label: "B.Tech" },
+    { value: "mtech", label: "M.Tech" },
+    { value: "mca", label: "MCA" },
+    { value: "phd", label: "Ph.D" },
+  ];
+  const yearoptions = [
+    { value: "1", label: "1" },
+    { value: "2", label: "2" },
+    { value: "3", label: "3" },
+    { value: "4", label: "4" },
+  ];
 
   const calculateTotalAmount = (): number => {
     const checkingAmount =
       evaluationDetails.numberOfStudents * evaluationDetails.checkingRate;
-    const practicalAmount =
-      evaluationDetails.numberOfStudents * evaluationDetails.practicalRate;
-    return checkingAmount + practicalAmount;
+    return checkingAmount;
   };
 
   return (
     <form>
+      <div className="input-container">
+        <label>Course:</label>
+        <select
+          value={evaluationDetails.course}
+          onChange={(e) =>
+            setEvaluationDetails({
+              ...evaluationDetails,
+              course: e.target.value,
+            })
+          }
+        >
+          {courseOptions.map((course) => (
+            <option key={course.value} value={course.value}>
+              {course.label}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="input-container">
+        <label>Year :</label>
+        <select
+          value={evaluationDetails.year}
+          onChange={(e) =>
+            setEvaluationDetails({
+              ...evaluationDetails,
+              year: e.target.value,
+            })
+          }
+        >
+          {yearoptions.map((year) => (
+            <option key={year.value} value={year.value}>
+              {year.label}
+            </option>
+          ))}
+        </select>
+      </div>
       <div className="input-container">
         <label>Subject:</label>
         <input
@@ -79,19 +127,6 @@ const EvaluationPage: React.FC = () => {
             setEvaluationDetails({
               ...evaluationDetails,
               checkingRate: +e.target.value,
-            })
-          }
-        />
-      </div>
-      <div className="input-container">
-        <label>Practical Rate:</label>
-        <input
-          type="number"
-          value={evaluationDetails.practicalRate}
-          onChange={(e) =>
-            setEvaluationDetails({
-              ...evaluationDetails,
-              practicalRate: +e.target.value,
             })
           }
         />
