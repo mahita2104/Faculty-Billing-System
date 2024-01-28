@@ -1,12 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import FacultyDetails from "./components/FacultyDetails";
 import EvaluationPage from "./pages/EvaluationPage";
 import QuestionPaper from "./pages/QuestionPaper";
 import PracticalPage from "./pages/Practical";
-//import noofhours from "./pages/noofhours";
-//import conveyance from "./pages/conveyance";
+import NoOfHours from "./pages/noofhours";
 import Signup from "./pages/signup";
 import Login from "./pages/login";
 import Header from "./components/header";
@@ -27,11 +31,23 @@ const App: React.FC = () => {
     ifscCode: "ABCD1234567",
   };
 
+  // Function to determine whether to show the Sidebar based on the current route
+  const shouldShowSidebar = () => {
+    const currentPath = window.location.pathname;
+    return !["/login", "/signup"].includes(currentPath);
+  };
+
+  // Dummy setActiveTab function, replace this with your actual implementation
+  const setActiveTab = (tab: string) => {
+    // Your implementation logic here
+    console.log("Set active tab:", tab);
+  };
+
   return (
     <Router>
       <Header />
       <div className="app">
-        <Sidebar setActiveTab={() => {}} />
+        {shouldShowSidebar() && <Sidebar setActiveTab={setActiveTab} />}
         <div className="main-content">
           <Routes>
             <Route
@@ -40,10 +56,12 @@ const App: React.FC = () => {
             />
             <Route path="/evaluation" element={<EvaluationPage />} />
             <Route path="/practical" element={<PracticalPage />} />
-
             <Route path="/questionPaper" element={<QuestionPaper />} />
+            <Route path="/noofhours" element={<NoOfHours />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+            {/* Add a default route to redirect to home if no route matches */}
+            <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
         </div>
       </div>
@@ -52,3 +70,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
