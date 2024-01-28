@@ -17,6 +17,9 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveTab }) => {
         <li onClick={() => setActiveTab("evaluation")}>
           <Link to="/evaluation">Evaluation</Link>
         </li>
+        <li onClick={() => setActiveTab("practical")}>
+          <Link to="/practical">Practical Rates</Link>
+        </li>
         <li onClick={() => setActiveTab("questionPaper")}>
           <Link to="/questionPaper">Question Paper</Link>
         </li>
