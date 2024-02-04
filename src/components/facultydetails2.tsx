@@ -1,6 +1,5 @@
 // src/components/FacultyDetails.tsx
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import "./FacultyDetails.css";
 
 // New component for Personal Details section
@@ -9,8 +8,8 @@ const PersonalDetails: React.FC<{
   address: string;
   designation: string;
   email: string;
-  mobileNo: number;
-  alternateNo: number;
+  mobileNo: string;
+  alternateNo: string;
 }> = ({ name, address, designation, email, mobileNo, alternateNo }) => (
   <div>
     <h3>Personal Details</h3>
@@ -41,7 +40,7 @@ const PersonalDetails: React.FC<{
 const BankDetails: React.FC<{
   bankName: string;
   branchName: string;
-  accountNo: number;
+  accountNo: string;
   ifscCode: string;
 }> = ({ bankName, branchName, accountNo, ifscCode }) => (
   <div>
@@ -63,43 +62,48 @@ const BankDetails: React.FC<{
   </div>
 );
 
-const FacultyDetails: React.FC = () => {
-  const [facultyData, setFacultyData] = useState<any>({});
+interface FacultyDetailsProps {
+  // Define the props for the faculty details
+  name: string;
+  address: string;
+  designation: string;
+  email: string;
+  mobileNo: string;
+  alternateNo: string;
+  bankName: string;
+  branchName: string;
+  accountNo: string;
+  ifscCode: string;
+}
 
-  useEffect(() => {
-    const fetchFacultyData = async () => {
-      try {
-        // Make a GET request to your PHP backend
-        const response = await axios.get('http://localhost:3000/php/mapdetails.php');
-        withCredentials: true,
-        console.log("Response from backend:", response.data);
-        // Assuming the backend returns an array with a single faculty object
-        const facultyObject = response.data[0];
-        setFacultyData(facultyObject); // Fetching the first faculty from the array
-      } catch (error) {
-        console.error('Error fetching faculty data:', error);
-      }
-    };
-
-    fetchFacultyData();
-  }, []);
-
+const FacultyDetails: React.FC<FacultyDetailsProps> = ({
+  name,
+  address,
+  designation,
+  email,
+  mobileNo,
+  alternateNo,
+  bankName,
+  branchName,
+  accountNo,
+  ifscCode,
+}) => {
   return (
     <div className="faculty-details">
       <h2>Faculty Details</h2>
       <PersonalDetails
-        name={facultyData.name}
-        address={facultyData.address}
-        designation={facultyData.designation}
-        email={facultyData.email_id}
-        mobileNo={facultyData.mobile_no}
-        alternateNo={facultyData.alternate_no}
+        name={name}
+        address={address}
+        designation={designation}
+        email={email}
+        mobileNo={mobileNo}
+        alternateNo={alternateNo}
       />
       <BankDetails
-        bankName={facultyData.bank_name}
-        branchName={facultyData.branch_name}
-        accountNo={facultyData.account_no}
-        ifscCode={facultyData.ifsc_code}
+        bankName={bankName}
+        branchName={branchName}
+        accountNo={accountNo}
+        ifscCode={ifscCode}
       />
       {/* Add an edit button here */}
       <button>Edit Details</button>

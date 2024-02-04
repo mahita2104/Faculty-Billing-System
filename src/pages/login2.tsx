@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
-import CustomButton from "../components/button";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import CustomButton from "../components/button"; // Renamed the imported Button component
 
 interface ButtonProps {
   onClick: () => void;
@@ -12,7 +10,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({
   onClick,
-  type = "button",  // set default value if not provided
+  type = "button",
   children,
 }) => {
   return (
@@ -23,21 +21,12 @@ const Button: React.FC<ButtonProps> = ({
 };
 
 const Login: React.FC = () => {
-  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  const validateEmail = (email: string) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  };
-
-  const validatePassword = (password: string) => {
-    return password.length >= 6;
-  };
-
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
 
     // Email validation
@@ -56,24 +45,18 @@ const Login: React.FC = () => {
       setPasswordError("");
     }
 
-    // Proceed with login logic
-    console.log("Request Body:", { email, password });
-    const response = await axios.post('http://localhost:3000/php/login2.php', {
-        email,
-        password,
-      },{
-        withCredentials: true,
-      });
+    // If validations pass, proceed with login logic
+    console.log("Login successful");
+  };
 
-    const data = response.data;
+  const validateEmail = (email: string) => {
+    // Basic email validation logic (you can use a library or more robust validation)
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
-    if (response.status===200) {
-      localStorage.setItem('session_id', data.session_id);
-      console.log(data);
-      //navigate("/");
-    } else {
-      return console.error(data.message);
-    }
+  const validatePassword = (password: string) => {
+    // Basic password validation logic (you can add more specific rules)
+    return password.length >= 6; // Example: Password should be at least 6 characters
   };
 
   return (
@@ -106,7 +89,9 @@ const Login: React.FC = () => {
           />
           {passwordError && <p className="error-message">{passwordError}</p>}
         </div>
-        <CustomButton type="submit">Login</CustomButton>
+        <CustomButton type="submit" onClick={handleLogin}>
+          Login
+        </CustomButton>
         <div className="switch-page">
           <p>
             Don't have an account? <Link to="/signup">Sign up</Link>

@@ -20,8 +20,8 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveTab }) => {
         <li onClick={() => setActiveTab("questionPaper")}>
           <Link to="/questionPaper">Question Paper</Link>
         </li>
-        <li onClick={() => setActiveTab("hours")}>
-          <Link to="/hours">Number of Hours</Link>
+        <li onClick={() => setActiveTab("noofhours")}>
+          <Link to="/noofhours">Number of Hours</Link>
         </li>
         <li onClick={() => setActiveTab("conveyance")}>
           <Link to="/conveyance">Conveyance</Link>

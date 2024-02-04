@@ -3,50 +3,54 @@
 
 /* Style for the university name */
 #mainHeading {
-    font-weight: bold;
-    color: darkblue;
-  }
-  
-  /* Style for the logo */
-  .image-container {
-    max-width: 600px; /* Set your desired maximum width for the image container */
-    margin-right: 1px; /* Adjust the margin between the image and text containers */
-  }
-  
-  .logo img {
-    max-width: 100%; /* Set the image width to fill its container */
-    display: block; /* Ensures the logo is a block element */
-    margin-bottom: 10px; /* Adjust the margin as needed */
-  }
-  
-  /* Style for the text container */
-  .text-container {
-    max-width: auto; /* Set your desired maximum width for the text container */
-    margin: 70px; /* Center the text container horizontally */
-    text-align: center;
-  }
-  
-  /* Increase font size for specific headings */
-  #mainHeading {
-    font-size: 24px; /* Set the desired font size */
-  }
+  font-weight: bold;
+  color: darkblue;
+}
+
+/* Style for the logo */
+.image-container {
+  max-width: 600px; /* Set your desired maximum width for the image container */
+  margin-right: 1px; /* Adjust the margin between the image and text containers */
+}
+
+.logo img {
+  max-width: 100%; /* Set the image width to fill its container */
+  display: block; /* Ensures the logo is a block element */
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+/* Style for the text container */
+.text-container {
+  max-width: auto; /* Set your desired maximum width for the text container */
+  margin: 70px; /* Center the text container horizontally */
+  text-align: center;
+}
+
+/* Increase font size for specific headings */
+#mainHeading {
+  font-size: 24px; /* Set the desired font size */
+}
 
 
-  #secondHeading,
-  #thirdHeading {
-    font-size: 17px; /* Set the desired font size */
-  }
-  
-  /* Style for the header itself */
-  .header-container {
-    display: flex;
-    justify-content: flex-start; /* Aligns items to the start of the flex container */
-    align-items: center;
-    background-color: white; /* White background */
-    padding: 40px; /* Add padding to enhance the shadow effect */
-    height: 30px;
-    max-width: auto;
-  }
-  
-  
-  
+#secondHeading,
+#thirdHeading {
+  font-size: 17px; /* Set the desired font size */
+}
+
+/* Style for the header itself */
+.header-container {
+  display: flex;
+  justify-content: flex-start; /* Aligns items to the start of the flex container */
+  align-items: center;
+  background-color: white; /* White background */
+  padding: 40px; /* Add padding to enhance the shadow effect */
+  height: 30px;
+  margin-top: 20px;
+  max-width: auto;
+}
+
+
+
+
+
+
