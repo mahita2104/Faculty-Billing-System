@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-include 'work.php'; // Assuming this file contains your database connection
+include 'db_connection.php'; // Assuming this file contains your database connection
 
 // Get POST data
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
