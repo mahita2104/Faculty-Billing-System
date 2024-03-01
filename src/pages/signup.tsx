@@ -1,7 +1,24 @@
 import React, { useState } from "react";
 import "./signup.css";
-import Button from "../components/button";
 import { Link } from "react-router-dom";
+
+interface CustomButtonProps {
+  onClick?: (e: React.FormEvent) => void; // Make onClick optional
+  children: React.ReactNode;
+  type?: "submit" | "reset" | "button"; // Define type attribute as optional
+}
+
+const CustomButton: React.FC<CustomButtonProps> = ({
+  onClick,
+  children,
+  type = "button", // Set default value for type attribute
+}) => {
+  return (
+    <button className="custom-button" type={type} onClick={onClick}>
+      {children}
+    </button>
+  );
+};
 
 const SignUp: React.FC = () => {
   const [errors, setErrors] = useState<any>({});
@@ -70,168 +87,170 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <div className="scrollable-form">
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <h2>Sign Up</h2>
-        <div className="input-container">
-          <label htmlFor="name" className="label-heading">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            required
-          />
-        </div>
-        <div className="input-container">
-          <label htmlFor="address">Address</label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            placeholder="Enter your address"
-            required
-          />
-        </div>
-        <div className="input-container">
-          <label htmlFor="Designation">Designation</label>
-          <input
-            type="text"
-            id="designation"
-            name="designation"
-            placeholder="Enter your designation"
-            required
-          />
-        </div>
+    <div className="signup-container">
+      <div className="scrollable-form">
+        <form className="signup-form" onSubmit={handleSubmit}>
+          <h2>Sign Up</h2>
+          <div className="input-container">
+            <label htmlFor="name" className="label-heading">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="address">Address</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Enter your address"
+              required
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="Designation">Designation</label>
+            <input
+              type="text"
+              id="designation"
+              name="designation"
+              placeholder="Enter your designation"
+              required
+            />
+          </div>
 
-        {/* ... Other input fields ... */}
-        <div className="input-container">
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-          />
-          {errors.email && <div className="error">{errors.email}</div>}
-        </div>
-        <div className="input-container">
-          <label htmlFor="PAN No.">PAN No.</label>
-          <input
-            type="text"
-            id="PAN No."
-            name="PAN No."
-            placeholder="Enter your PAN No."
-            required
-          />
-          {errors.pan && <div className="error">{errors.pan}</div>}
-        </div>
-        <div className="input-container">
-          <label htmlFor="phone">Phone No.</label>
-          <div className="subfields">
-            <div className="subfield">
-              <label htmlFor="mobile">Mobile No.</label>
-              <input
-                type="tel"
-                id="mobile"
-                name="mobile"
-                placeholder="Enter mobile number"
-                required
-              />
-              {errors.mobile && <div className="error">{errors.mobile}</div>}
-            </div>
-            <div className="subfield">
-              <label htmlFor="telephone">Alternate No.</label>
-              <input
-                type="tel"
-                id="telephone"
-                name="telephone"
-                placeholder="Enter alternate number"
-                required
-              />
-              {errors.telephone && (
-                <div className="error">{errors.telephone}</div>
-              )}
+          {/* ... Other input fields ... */}
+          <div className="input-container">
+            <label htmlFor="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+            {errors.email && <div className="error">{errors.email}</div>}
+          </div>
+          <div className="input-container">
+            <label htmlFor="PAN No.">PAN No.</label>
+            <input
+              type="text"
+              id="PAN No."
+              name="PAN No."
+              placeholder="Enter your PAN No."
+              required
+            />
+            {errors.pan && <div className="error">{errors.pan}</div>}
+          </div>
+          <div className="input-container">
+            <label htmlFor="phone">Phone No.</label>
+            <div className="subfields">
+              <div className="subfield">
+                <label htmlFor="mobile">Mobile No.</label>
+                <input
+                  type="tel"
+                  id="mobile"
+                  name="mobile"
+                  placeholder="Enter mobile number"
+                  required
+                />
+                {errors.mobile && <div className="error">{errors.mobile}</div>}
+              </div>
+              <div className="subfield">
+                <label htmlFor="telephone">Alternate No.</label>
+                <input
+                  type="tel"
+                  id="telephone"
+                  name="telephone"
+                  placeholder="Enter alternate number"
+                  required
+                />
+                {errors.telephone && (
+                  <div className="error">{errors.telephone}</div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-        <div className="input-container">
-          <label htmlFor="bank">Bank Details</label>
-          <div className="subfields">
-            <div className="subfield">
-              <label htmlFor="bank name">Bank Name</label>
-              <input
-                type="text"
-                id="bank name"
-                name="bank name"
-                placeholder="Enter bank name"
-                required
-              />
-            </div>
-            <div className="subfield">
-              <label htmlFor="branch name">Branch Name</label>
-              <input
-                type="text"
-                id="branch name"
-                name="branch name"
-                placeholder="Enter branch name"
-                required
-              />
-            </div>
-            <div className="subfield">
-              <label htmlFor="bank acc no.">Bank Account No.</label>
-              <input
-                type="text"
-                id="bank acc no."
-                name="bank acc no."
-                placeholder="Enter bank account no."
-                required
-              />
-            </div>
-            <div className="subfield">
-              <label htmlFor="IFSC Code">IFSC Code</label>
-              <input
-                type="text"
-                id="IFSC Code"
-                name="IFSC Code"
-                placeholder="Enter IFSC Code"
-                required
-              />
-              {errors.ifsc && <div className="error">{errors.ifsc}</div>}
+          <div className="input-container">
+            <label htmlFor="bank">Bank Details</label>
+            <div className="subfields">
+              <div className="subfield">
+                <label htmlFor="bank name">Bank Name</label>
+                <input
+                  type="text"
+                  id="bank name"
+                  name="bank name"
+                  placeholder="Enter bank name"
+                  required
+                />
+              </div>
+              <div className="subfield">
+                <label htmlFor="branch name">Branch Name</label>
+                <input
+                  type="text"
+                  id="branch name"
+                  name="branch name"
+                  placeholder="Enter branch name"
+                  required
+                />
+              </div>
+              <div className="subfield">
+                <label htmlFor="bank acc no.">Bank Account No.</label>
+                <input
+                  type="text"
+                  id="bank acc no."
+                  name="bank acc no."
+                  placeholder="Enter bank account no."
+                  required
+                />
+              </div>
+              <div className="subfield">
+                <label htmlFor="IFSC Code">IFSC Code</label>
+                <input
+                  type="text"
+                  id="IFSC Code"
+                  name="IFSC Code"
+                  placeholder="Enter IFSC Code"
+                  required
+                />
+                {errors.ifsc && <div className="error">{errors.ifsc}</div>}
+              </div>
             </div>
           </div>
+          <div className="input-container">
+            <label htmlFor="set password">Set Password</label>
+            <input
+              type="text"
+              id="set password"
+              name="set password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="confirm password">Confirm Password</label>
+            <input
+              type="text"
+              id="confirm password"
+              name="confirm password"
+              placeholder="Confirm your password"
+              required
+            />
+            {errors.password && <div className="error">{errors.password}</div>}
+          </div>
+          {/* ... Other input fields ... */}
+          <CustomButton type="submit">Sign Up</CustomButton>
+        </form>
+        <div className="switch-page">
+          <p>
+            Already have an account? <Link to="/">Login</Link>
+          </p>
         </div>
-        <div className="input-container">
-          <label htmlFor="set password">Set Password</label>
-          <input
-            type="text"
-            id="set password"
-            name="set password"
-            placeholder="Enter your password"
-            required
-          />
-        </div>
-        <div className="input-container">
-          <label htmlFor="confirm password">Confirm Password</label>
-          <input
-            type="text"
-            id="confirm password"
-            name="confirm password"
-            placeholder="Confirm your password"
-            required
-          />
-          {errors.password && <div className="error">{errors.password}</div>}
-        </div>
-        {/* ... Other input fields ... */}
-        <Button type="submit">Sign Up</Button>
-      </form>
-      <div className="switch-page">
-        <p>
-          Already have an account? <Link to="/">Login</Link>
-        </p>
       </div>
     </div>
   );

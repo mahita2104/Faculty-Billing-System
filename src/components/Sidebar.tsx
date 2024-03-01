@@ -12,19 +12,19 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveTab }) => {
     <div className="sidebar">
       <ul>
         <li onClick={() => setActiveTab("evaluation")}>
-          <Link to="/">My Details</Link>
+          <Link to="/home">My Details</Link>
         </li>
         <li onClick={() => setActiveTab("evaluation")}>
           <Link to="/evaluation">Evaluation</Link>
+        </li>
+        <li onClick={() => setActiveTab("practical")}>
+          <Link to="/practical">Practical Rates</Link>
         </li>
         <li onClick={() => setActiveTab("questionPaper")}>
           <Link to="/questionPaper">Question Paper</Link>
         </li>
         <li onClick={() => setActiveTab("hours")}>
-          <Link to="/hours">Number of Hours</Link>
-        </li>
-        <li onClick={() => setActiveTab("conveyance")}>
-          <Link to="/conveyance">Conveyance</Link>
+          <Link to="/noofhours">Number of Hours</Link>
         </li>
       </ul>
     </div>
@@ -32,3 +32,4 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveTab }) => {
 };
 
 export default Sidebar;
+
