@@ -65,7 +65,7 @@ const PersonalDetails: React.FC<{
         <input
           type="text"
           value={email}
-          onChange={(e) => onInputChange("email", e.target.value)}
+          onChange={(e) => onInputChange("email_id", e.target.value)}
         />
       ) : (
         <span>{email}</span>
@@ -78,7 +78,7 @@ const PersonalDetails: React.FC<{
           <input
             type="text"
             value={mobileNo}
-            onChange={(e) => onInputChange("mobileNo", e.target.value)}
+            onChange={(e) => onInputChange("mobile_no", e.target.value)}
           />
         ) : (
           <span>{mobileNo}</span>
@@ -90,7 +90,7 @@ const PersonalDetails: React.FC<{
           <input
             type="text"
             value={alternateNo}
-            onChange={(e) => onInputChange("alternateNo", e.target.value)}
+            onChange={(e) => onInputChange("alternate_no", e.target.value)}
           />
         ) : (
           <span>{alternateNo}</span>
@@ -123,7 +123,7 @@ const BankDetails: React.FC<{
         <input
           type="text"
           value={bankName}
-          onChange={(e) => onInputChange("bankName", e.target.value)}
+          onChange={(e) => onInputChange("bank_name", e.target.value)}
         />
       ) : (
         <span>{bankName}</span>
@@ -136,7 +136,7 @@ const BankDetails: React.FC<{
           <input
             type="text"
             value={branchName}
-            onChange={(e) => onInputChange("branchName", e.target.value)}
+            onChange={(e) => onInputChange("branch_name", e.target.value)}
           />
         ) : (
           <span>{branchName}</span>
@@ -148,7 +148,7 @@ const BankDetails: React.FC<{
           <input
             type="text"
             value={accountNo}
-            onChange={(e) => onInputChange("accountNo", e.target.value)}
+            onChange={(e) => onInputChange("account_no", e.target.value)}
           />
         ) : (
           <span>{accountNo}</span>
@@ -161,7 +161,7 @@ const BankDetails: React.FC<{
         <input
           type="text"
           value={ifscCode}
-          onChange={(e) => onInputChange("ifscCode", e.target.value)}
+          onChange={(e) => onInputChange("ifsc_code", e.target.value)}
         />
       ) : (
         <span>{ifscCode}</span>
