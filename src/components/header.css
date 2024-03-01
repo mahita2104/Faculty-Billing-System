@@ -11,6 +11,7 @@
 .image-container {
   max-width: 600px; /* Set your desired maximum width for the image container */
   margin-right: 1px; /* Adjust the margin between the image and text containers */
+  align-items: center;
 }
 
 .logo img {
@@ -40,7 +41,7 @@
 /* Style for the header itself */
 .header-container {
   display: flex;
-  justify-content: flex-start; /* Aligns items to the start of the flex container */
+  justify-content: center; /* Aligns items to the start of the flex container */
   align-items: center;
   background-color: white; /* White background */
   padding: 40px; /* Add padding to enhance the shadow effect */

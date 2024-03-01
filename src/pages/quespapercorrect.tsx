@@ -59,19 +59,6 @@ const QuestionPaper = () => {
     setEntries([...entries, entry]);
     setShowTable(true);
   };
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-
-    // Reset form fields to their default values
-    setSubject("");
-    setYear("");
-    setSubjectCode("");
-    setNumQuestionPapers(0);
-    setCourse("");
-    setRate(0);
-    setTotalAmount(0);
-    setShowTable(true);
-  };
   const handleGenerateBill = () => {
     // Logic for generating bill (if needed)
     console.log("Generating Bill...");
@@ -103,7 +90,7 @@ const QuestionPaper = () => {
             <option value="3">3</option>
           </>
         );
-      case "Ph.D":
+      case "Ph.D.":
         return <option value="Any">Any</option>;
       default:
         return null;
@@ -112,30 +99,7 @@ const QuestionPaper = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Course:
-          <select
-            value={course}
-            onChange={(e) => setCourse(e.target.value)}
-          >
-            <option value="">Select Course</option>
-            <option value="B.Tech">B.Tech</option>
-            <option value="M.Tech">M.Tech</option>
-            <option value="MCA">MCA</option>
-            <option value="Ph.D">Ph.D</option>
-          </select>
-        </label>
-        <label>
-          Year:
-          <select
-            value={year}
-            onChange={(e) => setYear(e.target.value)}
-          >
-            <option value="">Select Year</option>
-            {renderYearOptions()}
-          </select>
-        </label>
+      <form>
         <label>
           Subject:
           <input
@@ -151,6 +115,29 @@ const QuestionPaper = () => {
             value={subjectCode}
             onChange={(e) => setSubjectCode(e.target.value)}
           />
+        </label>
+        <label>
+          Course:
+          <select
+            value={course}
+            onChange={(e) => setCourse(e.target.value)}
+          >
+            <option value="">Select Course</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech</option>
+            <option value="Ph.D.">Ph.D.</option>
+            <option value="MCA">MCA</option>
+          </select>
+        </label>
+        <label>
+          Year:
+          <select
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+          >
+            <option value="">Select Year</option>
+            {renderYearOptions()}
+          </select>
         </label>
         <label>
           Rate :
@@ -176,10 +163,10 @@ const QuestionPaper = () => {
         </label>
        
       <div className="button-container">
-        <button className="submit-button" type="submit" onClick={calculateTotalAmount}>
+        <button className="submit-button" type="button" onClick={calculateTotalAmount}>
           Submit
         </button>
-        <button className="generate-bill-button" type="submit" onClick={handleGenerateBill}>
+        <button className="generate-bill-button" type="button" onClick={handleGenerateBill}>
           Submit and Generate Bill
         </button>
       </div>
@@ -191,10 +178,10 @@ const QuestionPaper = () => {
         <table>
           <thead>
             <tr>
-              <th>Course</th>
-              <th>Year</th>
               <th>Subject</th>
               <th>Subject Code</th>
+              <th>Course</th>
+              <th>Year</th>
               <th>Rate</th>
               <th>Number of Question Papers</th>
               <th>Total Amount</th>
@@ -203,10 +190,10 @@ const QuestionPaper = () => {
           <tbody>
             {entries.map((entry, index) => (
               <tr key={index}>
-                <td>{entry.course}</td>
-                <td>{entry.year}</td>
                 <td>{entry.subject}</td>
                 <td>{entry.subjectCode}</td>
+                <td>{entry.course}</td>
+                <td>{entry.year}</td>
                 <td>{entry.rate}</td>
                 <td>{entry.numQuestionPapers}</td>
                 <td>{entry.totalAmount}</td>

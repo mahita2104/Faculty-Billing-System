@@ -12,7 +12,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({
   onClick,
-  type = "button",  // set default value if not provided
+  type = "button",  
   children,
 }) => {
   return (
@@ -28,6 +28,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [loginError, setLoginError] = useState(""); // New state for login error
 
   const validateEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -40,7 +41,6 @@ const Login: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Email validation
     if (!validateEmail(email)) {
       setEmailError("Please enter a valid email address");
       return;
@@ -48,7 +48,6 @@ const Login: React.FC = () => {
       setEmailError("");
     }
 
-    // Password validation
     if (!validatePassword(password)) {
       setPasswordError("Please enter a valid password");
       return;
@@ -56,23 +55,26 @@ const Login: React.FC = () => {
       setPasswordError("");
     }
 
-    // Proceed with login logic
-    console.log("Request Body:", { email, password });
-    const response = await axios.post('http://localhost:3000/php/login2.php', {
-        email,
-        password,
-      },{
-        withCredentials: true,
-      });
+    try {
+      const response = await axios.post('http://localhost:3000/php/login.php', {
+          email,
+          password,
+        },{
+          withCredentials: true,
+        });
 
-    const data = response.data;
+      const data = response.data;
 
-    if (response.status===200) {
-      localStorage.setItem('session_id', data.session_id);
-      console.log(data);
-      //navigate("/");
-    } else {
-      return console.error(data.message);
+      if (response.status === 200) {
+        localStorage.setItem('session_id', data.session_id);
+        console.log(data);
+        navigate("/home");
+      } else {
+        setLoginError(data.message); // Set login error if login not successful
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      setLoginError("Login not successful. Please try again."); // Set generic login error
     }
   };
 
@@ -107,6 +109,7 @@ const Login: React.FC = () => {
           {passwordError && <p className="error-message">{passwordError}</p>}
         </div>
         <CustomButton type="submit">Login</CustomButton>
+        {loginError && <p className="error-message">{loginError}</p>}
         <div className="switch-page">
           <p>
             Don't have an account? <Link to="/signup">Sign up</Link>

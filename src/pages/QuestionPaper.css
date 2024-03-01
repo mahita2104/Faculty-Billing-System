@@ -1,4 +1,4 @@
-/* styles.css */
+/* QuestionPaper.css */
 
 body {
   font-family: 'Arial', sans-serif;
@@ -29,14 +29,18 @@ label {
   margin-bottom: 10px;
 }
 
-input {
+input[type="text"],
+input[type="number"],
+select {
   padding: 8px;
   margin-bottom: 15px;
   width: 100%;
   box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-button {
+ button {
   padding: 10px;
   background-color: #007bff;
   color: #fff;
@@ -44,7 +48,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-}
+} 
 
 .button-container {
   display: flex;
@@ -69,7 +73,21 @@ button {
   color: #fff;
 }
 
-/* Remove hover effect */
-button:hover {
-  background-color: #007bff;
+.submitted-entries-container {
+  margin-top: 30px;
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
