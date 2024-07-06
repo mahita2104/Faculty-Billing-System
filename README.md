@@ -15,42 +15,54 @@ To checkout the proper functionality of our webapp
 ## Detailed Walkthrough
 <details>
 <summary>User Authenication and Account Creation</summary>
- - Login: Users can log in using their email ID and password if they already have an account.
- - Sign Up: New users can create an account by providing necessary details.
- </details>
- <details>
-   <summary> Homepage</summary>
-   - User Information Display: The homepage provides a comprehensive display of user details, including:
-         - Profile Information: Name, email, contact number, and profile picture.
-         - Role and Designation: Faculty role and designation within the university.
-         - Bank Details: Bank account number, IFSC code, and other relevant banking information.
-         - Edit Options for updating personal information, changing passwords, and managing preferences.
+  
+  - Login: Users can log in using their email ID and password if they already have an account.
+  - Sign Up: New users can create an account by providing necessary details.
 
  </details>
  <details>
+   <summary> Homepage</summary>
+   The homepage provides a comprehensive display of user details, including:
+   
+   - Profile Information: Name, email, contact number, and profile picture.
+   - Role and Designation: Faculty role and designation within the university.
+   - Bank Details: Bank account number, IFSC code, and other relevant banking information.
+   - Edit Options for updating personal information, changing passwords, and managing preferences.
+     
+ </details>
+ <details>
    <summary>Hours Worked Module</summary>
+   
    - Input Details: Users can input their designation and the number of hours taught, which will be compensated on an hourly basis.
    - Total Amount: The total amount is generated based on the hours input.
+     
  </details>
  <details>
    <summary>Evaluation Module</summary>
+   
    - Input Details: Users can input the number of students whose sheets are checked, degree, year, number of students, and whether the question paper was made by the faculty.
    - Multiple Entries: Users can add multiple entries by submitting each set of details, with a table below recording all entries for this module.
    - Entry Management: Option to edit or delete existing entries directly from the table.
+     
  </details>
  <details>
    <summary>Question Paper Module</summary>
-    - Input Details: Users can input which subject question paper was set,subject code, degree, and year.
-    - Multiple Entries: Similar to the Evaluation module, users can add multiple entries with a table below recording all entries.
-    - Entry Management: Option to edit or delete existing entries directly from the table.
+   
+   - Input Details: Users can input which subject question paper was set,subject code, degree, and year.
+   - Multiple Entries: Similar to the Evaluation module, users can add multiple entries with a table below recording all entries.
+   - Entry Management: Option to edit or delete existing entries directly from the table.
+    
  </details>
  <details>
    <summary> Final  Bill Generation</summary>
+   
    - Generate Bill: Users can click on the "Submit and Generate Bill" button to compile entries across different modules and display the final amount.
    - Bill Summary: A detailed breakdown of the bill, including individual entries from each module, total amounts.
    - Download Print Option: Users can download and print the final bill for their records.
+     
  </details>
- ## Demonstration
+ 
+## Demonstration
 Watch a demo video of our Faculty Billing System web app to see these features in action:
 
  ## Future work 
