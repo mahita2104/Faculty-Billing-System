@@ -10,3 +10,8 @@ Our solution aims to automate the billing process workflow, significantly increa
 - Simplified question paper setting
   
 Faculty members can generate bills at their convenience, freeing up time and resources for both faculty and staff to focus on more critical matters. This shift from manual to automated processes ensures that the academic institution runs more smoothly and efficiently, reducing the likelihood of errors and delays.
+To checkout the proper functionality of our webapp 
+## Detailed Walkthrough
+<summary> User Sign Up</summary>
+ - prompted to sign in
+
