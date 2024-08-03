@@ -19,7 +19,10 @@ To checkout the proper functionality of our webapp
   
   - Login: Users can log in using their email ID and password if they already have an account.
   - Sign Up: New users can create an account by providing necessary details.
-
+ <video width="320" height="240" controls>
+  <source src="https://github.com/Astha062902/Faculty_Billing_System/blob/mahita/app_videos/login.webm" type="video/webm">
+  Your browser does not support the video tag.
+ </video>
  </details>
  <details>
    <summary> Homepage</summary>
