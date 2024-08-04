@@ -59,6 +59,7 @@ Experience our automated billing system in action through a series of videos. Th
    
   - Input Details: Users can input their designation and the number of hours taught, which will be compensated on an hourly basis.
   - Total Amount: The total amount is generated based on the hours input.
+
   [hours_taught.webm](https://github.com/user-attachments/assets/68b201b0-b201-488f-93fe-dfefe39fb3bc)     
 </details>
 
