@@ -13,16 +13,18 @@ Our solution aims to automate the billing process workflow, significantly increa
   
 Faculty members can generate bills at their convenience, freeing up time and resources for both faculty and staff to focus on more critical matters. This shift from manual to automated processes ensures that the academic institution runs more smoothly and efficiently, reducing the likelihood of errors and delays.
 To checkout the proper functionality of our webapp 
+<div align="center" style="margin-bottom: 5px;">
+  <h1> 
+    <img src="https://github.com/Astha062902/Faculty_Billing_System/blob/mahita/app_videos/login.webm" width="500"/> 
+  </h1>
+</div>
 ## Detailed Walkthrough
 <details>
 <summary>User Authenication and Account Creation</summary>
   
   - Login: Users can log in using their email ID and password if they already have an account.
-  - Sign Up: New users can create an account by providing necessary details.
- <video width="320" height="240" controls>
-  <source src="https://github.com/Astha062902/Faculty_Billing_System/blob/mahita/app_videos/login.webm" type="video/webm">
-  Your browser does not support the video tag.
- </video>
+  - Sign Up: New users can create an account by providing necessary details
+
  </details>
  <details>
    <summary> Homepage</summary>
