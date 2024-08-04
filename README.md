@@ -9,20 +9,19 @@ Our solution aims to automate the billing process workflow, significantly increa
   - Teaching hours logged
   - Practical exams conducted
   - Travel Expenses
-- Streamlined Workflow: Efficiently manages the entire process from expense reimbursement to proper compensation, ensuring seamless operations.
-  
+- Streamlined Workflow: Efficiently manages the entire process from expense reimbursement to proper compensation,ensuring seamless operations.
+
 Faculty members can generate bills at their convenience, freeing up time and resources for both faculty and staff to focus on more critical matters. This shift from manual to automated processes ensures that the academic institution runs more smoothly and efficiently, reducing the likelihood of errors and delays.
 To checkout the proper functionality of our webapp 
-<div align="center" style="margin-bottom: 5px;">
-  <h1> 
-    <img src="https://github.com/Astha062902/Faculty_Billing_System/blob/mahita/app_videos/login.webm" width="500"/> 
-  </h1>
-</div>
+
 ## Detailed Walkthrough
 <details>
 <summary>User Authenication and Account Creation</summary>
   
   - Login: Users can log in using their email ID and password if they already have an account.
+
+[login.webm](https://github.com/user-attachments/assets/5acca6f9-14f8-47e4-b68c-83390114d5ee)
+
   - Sign Up: New users can create an account by providing necessary details
 
  </details>
@@ -34,14 +33,17 @@ To checkout the proper functionality of our webapp
    - Role and Designation: Faculty role and designation within the university.
    - Bank Details: Bank account number, IFSC code, and other relevant banking information.
    - Edit Options for updating personal information, changing passwords, and managing preferences.
-     
+
+[editing_details.webm](https://github.com/user-attachments/assets/56718454-ff9c-49e7-ad5a-b1afe6c5603a)
+ 
  </details>
  <details>
    <summary>Hours Worked Module</summary>
    
    - Input Details: Users can input their designation and the number of hours taught, which will be compensated on an hourly basis.
    - Total Amount: The total amount is generated based on the hours input.
-     
+
+[hours_taught.webm](https://github.com/user-attachments/assets/68b201b0-b201-488f-93fe-dfefe39fb3bc)     
  </details>
  <details>
    <summary>Evaluation Module</summary>
@@ -49,7 +51,9 @@ To checkout the proper functionality of our webapp
    - Input Details: Users can input the number of students whose sheets are checked, degree, year, number of students, and whether the question paper was made by the faculty.
    - Multiple Entries: Users can add multiple entries by submitting each set of details, with a table below recording all entries for this module.
    - Entry Management: Option to edit or delete existing entries directly from the table.
-     
+
+[evaluation.webm](https://github.com/user-attachments/assets/c649b092-fb7d-42f4-a72c-17d8c4974748)
+
  </details>
  <details>
    <summary>Question Paper Module</summary>
@@ -57,7 +61,9 @@ To checkout the proper functionality of our webapp
    - Input Details: Users can input which subject question paper was set,subject code, degree, and year.
    - Multiple Entries: Similar to the Evaluation module, users can add multiple entries with a table below recording all entries.
    - Entry Management: Option to edit or delete existing entries directly from the table.
-    
+
+  [question_paper.webm](https://github.com/user-attachments/assets/01621b2e-2d1f-4537-954b-0964bf89522a)
+
  </details>
  <details>
    <summary> Final  Bill Generation</summary>
@@ -65,9 +71,10 @@ To checkout the proper functionality of our webapp
    - Generate Bill: Users can click on the "Submit and Generate Bill" button to compile entries across different modules and display the final amount.
    - Bill Summary: A detailed breakdown of the bill, including individual entries from each module, total amounts.
    - Download Print Option: Users can download and print the final bill for their records.
-     
+
+ [bill-generation.webm](https://github.com/user-attachments/assets/076a24b6-3ef8-4fbe-bcf3-3bd34d919402)
  </details>
- 
+
 ## Demonstration
 Watch a demo video of our Faculty Billing System web app to see these features in action:
 
