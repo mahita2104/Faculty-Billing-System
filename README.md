@@ -3,16 +3,27 @@
 In universities, the payment process for faculty members remains largely manual, involving the completion of tedious forms and meticulous tracking of every expense. This manual approach incurs additional costs for maintaining and collecting these forms on time, which is crucial for timely faculty payments. Furthermore, there's always a risk of human error, and this manual process can cause significant delays in essential processes like faculty payroll.
 ## Brief Overview of Our solution
 Our solution aims to automate the billing process workflow, significantly increasing the efficiency of university operations. By eliminating the need to sift through paper forms, mail, email, scan, or process them manually, our automated system allows you to “set and forget” certain steps. Key features of our solution include:
-- Comprehensive automation of faculty compensation based on:
-  - Evaluation of answer sheets
-  - Creation of question papers
-  - Teaching hours logged
-  - Practical exams conducted
-  - Travel Expenses
-- Streamlined Workflow: Efficiently manages the entire process from expense reimbursement to proper compensation,ensuring seamless operations.
 
-Faculty members can generate bills at their convenience, freeing up time and resources for both faculty and staff to focus on more critical matters. This shift from manual to automated processes ensures that the academic institution runs more smoothly and efficiently, reducing the likelihood of errors and delays.
-To checkout the proper functionality of our webapp 
+#### Comprehensive Automation of Faculty Compensation
+- Evaluation of Answer Sheets
+- Creation of Question Papers
+- Teaching Hours Logged
+- Practical Exams Conducted
+- Travel Expenses
+#### Streamlined Workflow
+Efficiently manages the entire process from expense reimbursement to proper compensation, ensuring seamless operations. Faculty members can generate bills at their convenience, freeing up time and resources for both faculty and staff to focus on more critical matters. This shift from manual to automated processes ensures that the academic institution runs more smoothly and efficiently, reducing the likelihood of errors and delays.
+
+#### Key Features
+- **Database Management** : All faculty data is stored in a main database using MySQL. This includes data related to question papers, evaluation, and teaching hours, which are used to fetch details in real-time based on the course and subject chosen by the faculty.
+- **User Authentication** : Secure access and operations are ensured through the use of session tokens and CORS headers.
+- **Real-Time Updates** : Details on the homepage can be edited in real-time, with any changes directly reflected in the database. This guarantees that information is always current.
+- **Local Web Server Deployment** : The project is deployed using a local web server environment called XAMPP, facilitating easy setup and management.
+## Technology Stack 
+### Tech Stack
+
+| Frontend                                  | Backend                                       | Database                               | Authentication                               |
+|-------------------------------------------|-----------------------------------------------|----------------------------------------|----------------------------------------------|
+| ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white) <br> ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white) | ![PHP](https://img.shields.io/badge/-PHP-777BB4?logo=php&logoColor=white) <br> ![XAMPP](https://img.shields.io/badge/-XAMPP-FB7A24?logo=xampp&logoColor=white) | ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white) | ![Session Tokens](https://img.shields.io/badge/-Session%20Tokens-000000?logo=key&logoColor=white) <br> ![CORS](https://img.shields.io/badge/-CORS-000000?logo=shield&logoColor=white) |
 
 ## Detailed Walkthrough
 <details>
