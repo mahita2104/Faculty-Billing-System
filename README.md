@@ -6,7 +6,7 @@ In universities, the payment process for faculty members remains largely manual,
 ## 🚀 Brief Overview of Our Solution
 Our solution aims to automate the billing process workflow, significantly increasing the efficiency of university operations. By eliminating the need to sift through paper forms, mail, email, scan, or process them manually, our automated system allows you to “set and forget” certain steps. Key features of our solution include:
 
-#### Comprehensive Automation of Faculty Compensation
+#### Comprehensive Automation of Faculty Compensation based on
 - Evaluation of Answer Sheets
 - Creation of Question Papers
 - Teaching Hours Logged
